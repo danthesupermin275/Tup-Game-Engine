@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh3w5tjg0lmkh"]
+
+[ext_resource type="Script" uid="uid://b6eradklqsyqo" path="res://toast_manager.gd" id="1_koxjq"]
+[ext_resource type="StyleBox" uid="uid://dhyt2wqya37i8" path="res://toSt.tres" id="2_xswg8"]
+[ext_resource type="Script" uid="uid://dy8kuni1a8fek" path="res://toast^_text.gd" id="3_bmxn2"]
+[ext_resource type="Script" uid="uid://cor08nekxekca" path="res://toast_panel.gd" id="3_ha3f0"]
+
+[node name="Toast" type="Node2D"]
+script = ExtResource("1_koxjq")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 832.0
+offset_bottom = 128.0
+theme_override_styles/panel = ExtResource("2_xswg8")
+script = ExtResource("3_ha3f0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -832.0
+offset_right = -62.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 60
+text = "toast
+
+"
+scroll_active = false
+vertical_alignment = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+text_direction = 2
+script = ExtResource("3_bmxn2")
