@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr0cjdlvrng5v"]
+
+[ext_resource type="Script" uid="uid://cniev6n6ygikg" path="res://hello_world test.gd" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://bh3w5tjg0lmkh" path="res://toast_manager.tscn" id="2_epypp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y32ns"]
+bg_color = Color(0.23599, 0.23599, 0.23599, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Toast" parent="." instance=ExtResource("2_epypp")]
+position = Vector2(576, -928)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -768.0
+offset_right = 486.0
+offset_bottom = 929.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y32ns")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 204.0
+offset_right = 551.0
+offset_bottom = 306.0
+text = "hello world"
+script = ExtResource("1_0e48y")
+
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
