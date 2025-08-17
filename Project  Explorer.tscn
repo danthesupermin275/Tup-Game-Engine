@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bgo2rhb0mlkwa"]
+[gd_scene load_steps=23 format=3 uid="uid://bgo2rhb0mlkwa"]
 
 [ext_resource type="Script" uid="uid://i0gyhnffy7ej" path="res://project create menu.gd" id="1_otpvv"]
 [ext_resource type="PackedScene" path="res://toast_manager.tscn" id="1_uct6m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://n7bu8yfo3wg0" path="res://graphics/UI/icons/settings_icon.svg" id="7_rvbbt"]
 [ext_resource type="Script" uid="uid://boxh7fjg5qw3v" path="res://scripts/project exploer/settings_button.gd" id="8_o3t6r"]
 [ext_resource type="Theme" uid="uid://1enypgfjqp0n" path="res://new_theme.tres" id="9_au84y"]
+[ext_resource type="Script" uid="uid://sqt0mv5nkjfo" path="res://scripts/project exploer/settings.gd" id="9_r45p4"]
 [ext_resource type="Script" uid="uid://bdr5pc7hroh5m" path="res://scripts/project exploer/select_directory.gd" id="10_4ffy2"]
 
 [sub_resource type="Theme" id="Theme_6njd7"]
@@ -90,6 +91,7 @@ corner_radius_bottom_left = 20
 
 [node name="Toast" parent="." instance=ExtResource("1_uct6m")]
 position = Vector2(576, -928)
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -197,25 +199,26 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("8_o3t6r")
 
-[node name="Settings" type="Panel" parent="."]
-visible = false
+[node name="Settings" type="Panel" parent="settings"]
 z_index = 2
 z_as_relative = false
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -416.0
-offset_top = -256.0
-offset_right = 416.0
-offset_bottom = 256.0
+offset_left = -832.5
+offset_top = 608.0
+offset_right = -0.5
+offset_bottom = 1120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_3ehjv")
 theme_override_styles/panel = SubResource("StyleBoxFlat_02xwx")
+script = ExtResource("9_r45p4")
 
-[node name="FileDialog" type="FileDialog" parent="Settings"]
+[node name="FileDialog" type="FileDialog" parent="settings/Settings"]
 title = "Open a Directory"
 position = Vector2i(-320, -180)
 unresizable = true
@@ -227,14 +230,14 @@ dialog_hide_on_ok = true
 file_mode = 2
 access = 2
 
-[node name="Label" type="Label" parent="Settings"]
+[node name="Label" type="Label" parent="settings/Settings"]
 layout_mode = 0
 offset_right = 148.0
 offset_bottom = 64.0
 theme_override_font_sizes/font_size = 36
 text = "Project Directory"
 
-[node name="Button" type="Button" parent="Settings"]
+[node name="Button" type="Button" parent="settings/Settings"]
 layout_mode = 0
 offset_top = 64.0
 offset_right = 293.0
@@ -244,7 +247,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_m6a18")
 text = "Select"
 script = ExtResource("10_4ffy2")
 
-[node name="Label2" type="Label" parent="Settings"]
+[node name="Label2" type="Label" parent="settings/Settings"]
 layout_mode = 0
 offset_left = 320.0
 offset_top = 64.0
@@ -258,6 +261,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [connection signal="pressed" from="PopupMenu/confirm" to="PopupMenu/confirm" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_createproject_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_createproject_pressed"]
 [connection signal="pressed" from="settings" to="settings" method="_on__settings_pressed"]
