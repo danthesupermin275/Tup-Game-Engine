@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://bgo2rhb0mlkwa"]
 
 [ext_resource type="Script" uid="uid://i0gyhnffy7ej" path="res://project create menu.gd" id="1_otpvv"]
-[ext_resource type="PackedScene" path="res://toast_manager.tscn" id="1_uct6m"]
+[ext_resource type="PackedScene" uid="uid://bh3w5tjg0lmkh" path="res://toast_manager.tscn" id="1_uct6m"]
 [ext_resource type="StyleBox" uid="uid://dnqht3nqp3ws0" path="res://confirm button.tres" id="2_uct6m"]
 [ext_resource type="StyleBox" uid="uid://bjmau62ii57qe" path="res://cancel button.tres" id="3_wrahf"]
 [ext_resource type="Script" uid="uid://h8b2yfwmn1qd" path="res://scripts/project exploer/create_project.gd" id="5_r45p4"]
@@ -263,4 +263,4 @@ offset_bottom = 40.0
 [connection signal="pressed" from="PopupMenu/confirm" to="PopupMenu/confirm" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_createproject_pressed"]
-[connection signal="pressed" from="settings" to="settings" method="_on__settings_pressed"]
+[connection signal="pressed" from="settings" to="settings" method="_on_pressed"]

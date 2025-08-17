@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh3w5tjg0lmkh"]
 
-[ext_resource type="Script" uid="uid://b6eradklqsyqo" path="res://toast_manager.gd" id="1_koxjq"]
+[ext_resource type="Script" uid="uid://ddfw58lrs0ilc" path="res://scripts/toast_manager.gd" id="1_koxjq"]
 [ext_resource type="StyleBox" uid="uid://dhyt2wqya37i8" path="res://toSt.tres" id="2_xswg8"]
-[ext_resource type="Script" uid="uid://dy8kuni1a8fek" path="res://toast^_text.gd" id="3_bmxn2"]
-[ext_resource type="Script" uid="uid://cor08nekxekca" path="res://toast_panel.gd" id="3_ha3f0"]
+[ext_resource type="Script" uid="uid://6sn125l113tj" path="res://scripts/toast^_text.gd" id="3_bmxn2"]
+[ext_resource type="Script" uid="uid://wkmf57a1b8wc" path="res://scripts/toast_panel.gd" id="3_ha3f0"]
 
 [node name="Toast" type="Node2D"]
 script = ExtResource("1_koxjq")
