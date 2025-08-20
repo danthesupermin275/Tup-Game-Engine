@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://d373njvkyeu5x"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_t21m8"]
+function_color = Color(0.811765, 0.796078, 0, 1)
+
+[node name="ScriptEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+layout_mode = 0
+offset_left = -448.0
+offset_top = -888.0
+offset_right = 448.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 48
+syntax_highlighter = SubResource("CodeHighlighter_t21m8")
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
