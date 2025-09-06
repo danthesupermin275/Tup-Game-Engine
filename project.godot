@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ProjectManager="*res://scripts/ProjectManager.gd"
 ToastManager="*res://scripts/toast_manager.gd"
+ScriptingManager="*res://scripts/editor/scripting/push_Code.gd"
 
 [display]
 

@@ -1,4 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d373njvkyeu5x"]
+[gd_scene load_steps=6 format=3 uid="uid://d373njvkyeu5x"]
+
+[ext_resource type="Script" uid="uid://clrajbfkpi5b7" path="res://scripts/editor/scripting/code_edit.gd" id="1_ntq0e"]
+[ext_resource type="StyleBox" uid="uid://dad1vhea5bfqc" path="res://button.tres" id="2_c1c53"]
+[ext_resource type="Script" uid="uid://c2fka4s10wd41" path="res://scripts/editor/scripting/compile_button.gd" id="3_fbidi"]
+[ext_resource type="Theme" uid="uid://1enypgfjqp0n" path="res://new_theme.tres" id="4_fbidi"]
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_t21m8"]
 function_color = Color(0.811765, 0.796078, 0, 1)
@@ -23,3 +28,26 @@ theme_override_font_sizes/font_size = 48
 syntax_highlighter = SubResource("CodeHighlighter_t21m8")
 gutters_draw_line_numbers = true
 auto_brace_completion_enabled = true
+script = ExtResource("1_ntq0e")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -448.0
+offset_top = 256.0
+offset_right = -128.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("2_c1c53")
+text = "compile"
+script = ExtResource("3_fbidi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -448.0
+offset_top = 576.0
+offset_right = 512.0
+offset_bottom = 896.0
+theme = ExtResource("4_fbidi")
+scroll_following = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
