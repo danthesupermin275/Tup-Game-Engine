@@ -13,7 +13,7 @@ func compile(text: String) -> String:
 	
 	# Regex matches: words, numbers, punctuation, strings
 	var regex = RegEx.new()
-	regex.compile(r"\w+|[^\w\s]")
+	regex.compile(r"\".*?\"|\w+|[^\w\s]")
 	
 	for line in lines:
 		current_line += 1
